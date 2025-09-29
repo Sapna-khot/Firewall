@@ -1,6 +1,7 @@
 # Firewall
 
 🔒 Firewall Basics
+
 🔹 What is a Firewall?
 
 A firewall is a security system (software, hardware, or both) that controls incoming and outgoing network traffic based on predefined rules.
