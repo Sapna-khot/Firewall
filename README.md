@@ -43,45 +43,37 @@ It acts as a barrier between trusted internal networks and untrusted external ne
 
   1. Open firewall configuration tool
 
-    Press Win + R, type:
+   Press Win + R, type:
 
           wf.msc
 
-    This opens Windows Defender Firewall with Advanced Security.
+   This opens Windows Defender Firewall with Advanced Security.
 
   2. List current firewall rules
 
-    In the left pane, click Inbound Rules → you’ll see all rules.
+   In the left pane, click Inbound Rules → you’ll see all rules.
 
   3. Add a rule to block inbound traffic on port 23 (Telnet)
 
-    Click Inbound Rules → New Rule → Port
-    Select TCP, enter 23, choose Block the connection, apply to all profiles.
-    Name it: Block Telnet.
+   Click Inbound Rules → New Rule → Port
+   Select TCP, enter 23, choose Block the connection, apply to all profiles.
+   Name it: Block Telnet.
 
   4. Test the rule
 
-    Open PowerShell:
-    Test-NetConnection -Port 23 localhost
-    It should show TcpTestSucceeded: False.
+   Open PowerShell:
+      
+      Test-NetConnection -Port 23 localhost
+      
+   It should show TcpTestSucceeded: False.
 
   5. Allow SSH (if using OpenSSH on Windows or Linux target)
 
-    In Inbound Rules → New Rule → Port → TCP → 22
-    Choose Allow the connection.
+   In Inbound Rules → New Rule → Port → TCP → 22
+   Choose Allow the connection.
 
-6. Remove the test block rule
+  6. Remove the test block rule
 
-Find Block Telnet in the list → Right-click → Delete.
+   Find Block Telnet in the list → Right-click → Delete.
 
-7. Document steps
-
-Take screenshots of:
-
-The inbound rules list showing your Block Telnet and Allow SSH rules.
-
-Test-NetConnection output.
-
-8. Summary (Windows)
-
-Windows Firewall filters traffic by applying rule sets (allow/block) based on programs, ports, protocols, or IPs. Rules determine whether inbound/outbound packets are passed or dropped.
+Windows Firewall filters traffic by applying rule sets (allow/block) based on programs, ports, protocols, or IPs. Rules determine whether inbound/outbound         packets are passed or dropped.
